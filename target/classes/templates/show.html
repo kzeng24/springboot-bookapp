@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="layouts/default :: html">
+<body>
+<div class="container" th:fragment="content">
+    <div class="starter-template">
+        <h1 th:text="#{bookInfo}"></h1>
+        <h5 th:if="${message != null}" th:text="${message}" style="color: green;"></h5>
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <tr>
+                <th th:text="#{categoryName}"></th><td th:text="${book.category_name}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{isbn}"></th><td th:text="${book.isbn}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{title}"></th><td th:text="${book.title}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{publisher}"></th><td th:text="${book.publisher}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{price}"></th><td th:text="${book.price}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <a th:if="${userRole == '[ROLE_USER]'}" th:href="@{/books/{id}(id=${book.id})} + '?form'" th:text="#{editBook}"></a>
+    <hr>
+    <a href="/books" th:text="#{home}"></a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

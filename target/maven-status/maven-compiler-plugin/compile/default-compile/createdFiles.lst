@@ -1,0 +1,9 @@
+com/example/hw3part1/service/BookServiceImpl.class
+com/example/hw3part1/service/BookService.class
+com/example/hw3part1/App.class
+com/example/hw3part1/config/SecurityConfiguration.class
+com/example/hw3part1/web/BookController.class
+com/example/hw3part1/config/I18nConfiguration.class
+com/example/hw3part1/repos/BookRepository.class
+com/example/hw3part1/web/RedirectController.class
+com/example/hw3part1/entities/Book.class

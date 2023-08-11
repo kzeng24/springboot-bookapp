@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body th:fragment="menu">
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1" th:text="#{menu}"></span>
+    </div>
+</nav>
+<nav class="navbar navbar-light bg-light" >
+    <div class="container-fluid">
+        <a th:if="${userRole == null}" class="navbar-brand" href="/login" th:text="#{login}"></a>
+        <a th:if="${userRole == '[ROLE_USER]'}" class="navbar-brand" href="/books/new" th:text="#{addBook}"></a>
+        <a th:if="${userRole == '[ROLE_USER]'}" class="navbar-brand" href="/logout" th:text="#{logout}"></a>
+    </div>
+</nav>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span th:text="#{lang.change}"></span>
+        <select class="form-select" onchange="changeLanguage(this.value)">
+            <option value=""></option>
+            <option value="en" th:text="#{lang.eng}"></option>
+            <option value="fr" th:text="#{lang.fr}"></option>
+        </select>
+    </div>
+</nav>
+
+</body>
+</html>
