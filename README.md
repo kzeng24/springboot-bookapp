@@ -1,4 +1,4 @@
-# springboot-bookapp
+# MVC App using Spring Boot and Thymeleaf
 
 Start mysql with: mysql -u root -p
 
